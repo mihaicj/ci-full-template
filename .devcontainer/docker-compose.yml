@@ -6,6 +6,9 @@ services:
       dockerfile: Dockerfile
     volumes:
       - "/tmp/postgres/socket:/var/run/postgresql"
+      - type: bind
+        source: ../
+        target: /workspaces/project
  
   psql:
     image: postgres:11.9
